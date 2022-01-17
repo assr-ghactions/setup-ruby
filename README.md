@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: ruby/setup-ruby@v1
+    - uses: assr-ghactions/setup-ruby@v1
       with:
         ruby-version: 2.6 # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
@@ -90,7 +90,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
-    - uses: ruby/setup-ruby@v1
+    - uses: assr-ghactions/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
@@ -113,7 +113,7 @@ jobs:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
     steps:
       - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
+      - uses: assr-ghactions/setup-ruby@v1
         with:
           ruby-version: 2.6
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
@@ -151,7 +151,7 @@ This behavior can be customized, see [action.yml](action.yml) for more details a
 
 This action provides a way to automatically run `bundle install` and cache the result:
 ```yaml
-    - uses: ruby/setup-ruby@v1
+    - uses: assr-ghactions/setup-ruby@v1
       with:
         bundler-cache: true
 ```
@@ -190,7 +190,7 @@ In order to achieve this, set the `cache-version` option to any value other than
 if you have already used it before.)
 
 ```yaml
-    - uses: ruby/setup-ruby@v1
+    - uses: assr-ghactions/setup-ruby@v1
       with:
         bundler-cache: true
         cache-version: 1
